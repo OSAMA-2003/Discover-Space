@@ -1,0 +1,144 @@
+/** @format */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-shadow: 0.5px 0.5px 8px white;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.container {
+  z-index: 1;
+  height: 500px;
+}
+/* ----------------------------------------------------- */
+
+/* start navbar */
+
+/* NAVBAR */
+
+/* ------------------------------------------------------------- */
+nav {
+  z-index: 55555;
+}
+
+.navbar a {
+  color: #fff;
+  margin-right: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  text-shadow: 0.5px 0.5px 9px white;
+}
+
+.navbar-expand-lg {
+  padding: 20px;
+}
+p {
+  color: #fff;
+}
+/* --------------------------------------------------------- */
+
+.main {
+  z-index: 50;
+}
+
+.main .container .mid img {
+  animation: planetRotate 50s linear infinite;
+  position: relative;
+  transition: 0.5s;
+}
+
+@keyframes planetRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.main .container .right .tex {
+  overflow: hidden;
+  min-width: 185px;
+}
+.main .container .right .tex h1 {
+  font-size: 3.5rem;
+}
+.main .container .right .tex p {
+  position: relative;
+  transition: 0.3s;
+  color: #ababab;
+}
+
+/* Animation */
+
+/* Fade out and fade in animation */
+
+.fade-in-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Initial hidden state for the content (offscreen on the left) */
+.slide-in-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Final visible state (content slides in to its normal position) */
+.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* end content */
+
+/* ------------------------------------------ */
+
+.controls div {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    min-height: 1000px;
+  }
+
+  .main .container .mid {
+    justify-content: center;
+  }
+
+  .main .container .mid img {
+    width: 75% !important;
+    margin: 50px auto;
+    position: relative;
+  }
+
+  .main .container .right {
+    text-align: center !important;
+  }
+}
